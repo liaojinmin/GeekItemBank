@@ -1,0 +1,37 @@
+DefaultPlayer_limit: -1 # 默认不限制
+DefaultPlayer_time: 7天 #默认不限制
+DefaultGlobal_limit: -1 #默认不限制
+DefaultGlobal_time: 7天 #默认不限制
+# 默认限制功能未实现，也就是说不进行默认限制，不在下方列表的，玩家自由购买。
+
+shopInfo:
+  a:
+    displayName: '&b命名牌'
+    mate: name_tag # GUI显示的物品材质
+    lore:
+      - '妈卖批'
+    packId: 1号  # 该商品的唯一ID，用于识别商品，所有商品不要重复
+    Price: 20000 # 需要 2w 积分
+      # 全局限制比个人限制优先级高
+    Limit:
+      Global: # 如果不写这个配置项，代表不进行全局限制
+        limit: 10 # -1 不限制
+        time: 7天
+      Player:
+        limit: 7 # -1 不限制
+        time: 7天
+    action: |-
+      command "give %player_name% name_tag 1" as console
+  d:
+    displayName: '&e抽奖池'
+    mate: apple
+    lore:
+      - '来一发？可能有好东西'
+    packId: 抽奖-1
+    Price: 500
+    Limit:
+      Player:
+        limit: 7
+        time: 1天
+    # 填写抽奖池唯一命名
+    reward: 超级抽奖池

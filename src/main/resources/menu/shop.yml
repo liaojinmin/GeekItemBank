@@ -1,0 +1,52 @@
+TITLE: '&0积分商城'
+TYPE: shop
+Layout:
+  - '#########'
+  - '#sssssss#'
+  - '#sssssss#'
+  - '#sssssss#'
+  - '#########'
+  - '<   P   >'
+
+Bindings:
+  Commands: '积分商店'
+
+Icons:
+  s:
+    Type: ITEM
+    display:
+      mats: name_tag
+      name: '&7商品: &f[item_name]'
+      lore:
+        - ''
+        - ' &7个人剩余: &f[player_limit]'
+        - ' &7全服剩余: &f[global_limit]'
+        - ' &7商品价格: &f[item_Price]'
+        - ''
+        - '&8[&B左键_点击&8] &7# 购买商品'
+  '<':
+    Type: LAST_PAGE
+    display:
+      mats: 'IRON_DOOR'
+      name: '&3# &b上一页'
+
+  '>':
+    Type: NEXT_PAGE
+    display:
+      mats: IRON_DOOR
+      name: '&3# &b下一页'
+
+  '#':
+    Type: NORMAL
+    display:
+      mats: BLACK_STAINED_GLASS_PANE
+      data: 0
+      name: '&b&l 挡板'
+  'P':
+    Type: INFO
+    display:
+      mats: DIAMOND
+      name: '&7&l 个人信息'
+      lore:
+        - ''
+        - ' &7你的积分: &f%GeekItemRank_points%'

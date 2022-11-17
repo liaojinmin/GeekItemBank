@@ -1,0 +1,67 @@
+TITLE: '&0物资银行'
+TYPE: rank
+Layout:
+  - '#########'
+  - '#MMMMMMM#'
+  - '#MMMMMMM#'
+  - '#MMMMMMM#'
+  - '#########'
+  - '< A P S >'
+
+Bindings:
+  Commands: '物资银行'
+
+Icons:
+  M:
+    Type: ITEM
+    display:
+      name: '&7物品: &f[item_name]'
+      lore:
+        - ''
+        - ' &7仓库数量: &f[amount]'
+        - ' &7存入积分: &7+&f[givePrice]'
+        - ' &7取出积分: &7-&f[takePrice]'
+        - ''
+        - '&8[&B左键_点击&8] &7# 存入物品'
+        - '&8[&B右键_点击&8] &7# 取出物品'
+
+  '<':
+    Type: LAST_PAGE
+    display:
+      mats: 'IRON_DOOR'
+      name: '&3# &b上一页'
+
+  '>':
+    Type: NEXT_PAGE
+    display:
+      mats: IRON_DOOR
+      name: '&3# &b下一页'
+
+  '#':
+    Type: NORMAL
+    display:
+      mats: BLACK_STAINED_GLASS_PANE
+      data: 0
+      name: '&b&l 挡板'
+  'A':
+    Type: ADD_ITEM
+    display:
+      mats: DIAMOND
+      name: '&7&l 添加物品'
+      lore:
+        - ' &7自动分类存入更多的物品'
+  'S':
+    Type: SHOP
+    display:
+      mats: DIAMOND
+      name: '&7&l 积分商店'
+      lore:
+        - ' &7使用积分购买物品'
+  'P':
+    Type: INFO
+    display:
+      mats: DIAMOND
+      name: '&7&l 个人信息'
+      lore:
+        - ''
+        - ' &7你的积分: &f%GeekItemRank_points%'

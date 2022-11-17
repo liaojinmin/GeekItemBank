@@ -1,0 +1,35 @@
+type: reward
+# 超级池配置唯一命名
+NodeName: "超级抽奖池"
+Prizes:
+  1:
+    displayName: "&5&L一号奖品"
+    Chance: 0.06
+    commands: |-
+      command "points give %player_name% 100" as console
+      tell "&5&L一号奖品"
+  2:
+    displayName: "&5&L二号奖品"
+    Chance: 1
+    commands: |-
+      command "points give %player_name% 50" as console
+      tell "&5&L二号奖品"
+  3:
+    displayName: "&5&L3号奖品"
+    Chance: 1
+    commands: |-
+      command "points give %player_name% 50" as console
+      command "money give %player_name% 100" as console
+      tell "&5&L3号奖品"
+  4:
+    displayName: "&5&L4号奖品"
+    Chance: 0.05
+    commands: |-
+      command "points give %player_name% 200" as console
+      command "money give %player_name% 100" as console
+      subtitle "你人品爆发..." by 10 20 10
+  5:
+    displayName: "&5&L5号奖品"
+    Chance: 1.4
+    commands: |-
+      subtitle "你人品爆发,什么都没" by 10 20 10

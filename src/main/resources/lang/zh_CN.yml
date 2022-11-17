@@ -1,0 +1,125 @@
+玩家-存入物品-不匹配:
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_DIDGERIDOO'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '&c    你不能选择不匹配的物品... '
+  - '&7    错误的物品: &f{0}'
+  - '&f'
+玩家-取出物品-物品不足:
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_DIDGERIDOO'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '&c    你没有这么多的物品可取出... '
+  - '&7    可取出的物品数量: &f{0} &7个'
+  - '&f'
+玩家-取出物品-消息提示:
+  - type: title
+    title: '&c请输入取出数量'
+    subtitle: '&7你有 &f20 &7秒的时间'
+    fadein: 20
+    fadeout: 20
+    stay: 40
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_HARP'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '§A   ♻&7请输入要取出的数量并以 &f回车键 &7结束'
+  - '§A   ♻&7取消输入 &fCancel &7或 &f取消 &7结束'
+  - '&l'
+玩家-取出物品-输入错误:
+  - type: title
+    title: '&c你输入的 &f{0} &c不是数字'
+    subtitle: '&7请重新打开仓库再次尝试'
+    fadein: 20
+    fadeout: 20
+    stay: 40
+玩家-取出物品-成功取出:
+  - type: title
+    title: '&a成功取出'
+    subtitle: '&7已取出 &f{0} &8* &f{1}'
+    fadein: 20
+    fadeout: 20
+    stay: 40
+玩家-取出物品-积分不足:
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_DIDGERIDOO'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '&c    你没有足够的积分取出这个物品... '
+  - '&7    还差: &f{0}'
+  - '&f'
+
+
+玩家-积分商店-购买成功:
+  - type: sound
+    sound: 'ENTITY_LLAMA_CHEST'
+    volume: 1
+    pitch: 1
+  - type: sound
+    sound: 'ENTITY_EXPERIENCE_ORB_PICKUP'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '&b    成功领取购买，获得以下物品:'
+  - '&f    {0}'
+玩家-积分商店-积分不足:
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_DIDGERIDOO'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '&c    你没有足够的积分购买这个商品... '
+  - '&7    还差: &f{0}'
+  - '&f'
+玩家-积分商店-个人限制不足:
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_DIDGERIDOO'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '&c    你不能再继续购买这个物品了... '
+  - '&7    你已经购买过: &f{0} &7次'
+  - '&f'
+玩家-积分商店-全局限制不足:
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_DIDGERIDOO'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '&c    你不能再继续购买这个物品了... '
+  - '&7    全服已经购买过: &f{0} &7次'
+  - '&f'
+  -
+玩家-每日登录-发放利息:
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_HARP'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '§a   你已获得物资银行每日利息发放...'
+  - '§7   获得积分: &f{0}'
+  - '&l'

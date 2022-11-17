@@ -1,0 +1,27 @@
+DefaultGive_Price: 1
+DefaultTake_Price: 1.1
+
+bankInfo:
+  # 自定义代号
+  a:
+    # 物品源种类 ( 原版 = Minecraft )
+    type: Minecraft
+    # 物品名称
+    material: Paper
+
+    # 将物品存入 给予积分
+    give_Price: 10
+    # 将物品取出 扣除积分
+    take_Price: 15
+
+  # 自定义代号
+  b:
+    # 物品源种类 ( 原版 = Minecraft )
+    type: Minecraft
+    # 物品名称
+    material: Stone
+
+    # 将物品存入 给予积分
+    give_Price: 5
+    # 将物品取出 扣除积分
+    take_Price: 6
