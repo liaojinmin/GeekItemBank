@@ -8,7 +8,9 @@ import me.geek.rank.api.rank.RankManage.remQuitItem
 import me.geek.rank.api.rank.RankManage.updateData
 import me.geek.rank.common.rank.Rank
 import me.geek.rank.common.rank.Rank.matchNode
+import me.geek.rank.utils.getEmptySlot
 import org.bukkit.Bukkit
+import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.HandlerList
@@ -51,6 +53,11 @@ class Chat(
                                         }
                                         if (amt > it.amount) {
                                             player.sendLang("玩家-取出物品-物品不足", it.amount)
+                                            return
+                                        }
+                                        val nullStol = player.getEmptySlot(isItemAmount = true)
+                                        if (nullStol < amt) {
+                                            player.sendLang("玩家-取出物品-背包空间不足", amt - nullStol)
                                             return
                                         }
 

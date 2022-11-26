@@ -1,8 +1,6 @@
 package me.geek.rank.common.menu
 
-import me.geek.rank.GeekItemRank
 import org.bukkit.inventory.ItemStack
-import taboolib.common.platform.function.submitAsync
 import taboolib.platform.compat.replacePlaceholder
 import java.util.*
 
@@ -47,15 +45,15 @@ abstract class ActionBase : Action {
                             if (icon.cIcon == value) {
                                 inv?.let { inventory ->
                                     inventory.contents[index]?.let { st ->
-                                        GeekItemRank.debug("node-ActionBase:50 -> item[index] != null")
+
                                         val meta = st.itemMeta
                                         if (meta != null) {
                                             if (meta.hasDisplayName()) {
-                                                GeekItemRank.debug("node-ActionBase:54 -> hasDisplayName()")
+
                                                 meta.setDisplayName(meta.displayName.replacePlaceholder(player))
                                             }
                                             if (meta.hasLore()) {
-                                                GeekItemRank.debug("node-ActionBase:54 -> hasLore()")
+
                                                 val lore = meta.lore!!.replacePlaceholder(player)
                                                 meta.lore = lore
                                                 st.itemMeta = meta

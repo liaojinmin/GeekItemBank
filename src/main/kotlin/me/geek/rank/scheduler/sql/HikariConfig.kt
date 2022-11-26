@@ -5,7 +5,7 @@ package me.geek.rank.scheduler.sql
  * 时间: 2022/10/12
  *
  **/
-data class HikariData(
+data class HikariConfig(
     val maximum_pool_size: Int = 10,
     val minimum_idle: Int = 10,
     val maximum_lifetime: Int = 1800000,

@@ -13,14 +13,18 @@ import java.util.regex.Pattern
  *
  **/
 class Placeholder : PlaceholderExpansion() {
+    val regex = Regex("(top_name/?+|top_amt/?+)")
 
     override fun onPlaceholderRequest(player: Player, params: String): String {
-        val index = params.filter { it.isDigit() }.toInt()
+        var index = 0
+        if (params.contains(regex)) {
+            index = params.filter { it.isDigit() }.toInt()
+        }
         return when (params) {
             "points" -> player.getPlayerData()!!.pointsFormat()
             "double" -> player.getPlayerData()!!.pointsFormat(false)
-            "top_amt_$index" -> PointsTopTask.getPointsTop[index]?.let { it.split(";")[1] } ?: "暂无"
-            "top_name_$index" -> PointsTopTask.getPointsTop[index]?.let { it.split(";")[0] } ?: "暂无"
+            "top_amt_$index" -> PointsTopTask.getPointsTop()[index]?.let { it.split(";")[1] } ?: "暂无"
+            "top_name_$index" -> PointsTopTask.getPointsTop()[index]?.let { it.split(";")[0] } ?: "暂无"
             else -> return "0"
         }
     }

@@ -1,7 +1,9 @@
 package me.geek.rank.scheduler.task
 
 import me.geek.rank.api.rank.RankManage
+import me.geek.rank.scheduler.sql.SqlService
 import taboolib.common.platform.function.submitAsync
+import java.sql.Connection
 import java.util.concurrent.ConcurrentHashMap
 
 /**
@@ -24,7 +26,27 @@ class PointsTopTask {
             }
         }
     }
+
     companion object {
-        val getPointsTop: MutableMap<Int, String> =  PointsTopTask().points
+        private val p = PointsTopTask()
+        fun getPointsTop(): MutableMap<Int, String> = p.points
+    }
+    class LocSqlite() : SqlService() {
+        override var isActive: Boolean
+            get() = TODO("Not yet implemented")
+            set(value) {}
+
+        override fun getConnection(): Connection {
+            TODO("Not yet implemented")
+        }
+
+        override fun onStart() {
+            TODO("Not yet implemented")
+        }
+
+        override fun onClose() {
+            TODO("Not yet implemented")
+        }
+
     }
 }

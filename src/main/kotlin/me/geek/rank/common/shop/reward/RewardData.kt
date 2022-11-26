@@ -9,7 +9,7 @@ import taboolib.common.util.randomDouble
  **/
 class RewardData(
     val node: String,
-    val prizesNode: MutableList<PrizesNode>
+    private val prizesNode: MutableList<PrizesNode>
 ) {
     fun runReward(): PrizesNode {
         // 取总概率 start

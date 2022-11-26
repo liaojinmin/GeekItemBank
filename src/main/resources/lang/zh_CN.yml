@@ -20,6 +20,17 @@
   - '&c    你没有这么多的物品可取出... '
   - '&7    可取出的物品数量: &f{0} &7个'
   - '&f'
+玩家-取出物品-背包空间不足:
+  - type: sound
+    sound: 'BLOCK_NOTE_BLOCK_DIDGERIDOO'
+    volume: 1
+    pitch: 1
+  - '&1'
+  - '&7  Geek&fItemRank &8>&7>&f>'
+  - '&l'
+  - '&c    你的背包空间不足... '
+  - '&7    你还差 &f{0} &7个物品位数'
+  - '&f'
 玩家-取出物品-消息提示:
   - type: title
     title: '&c请输入取出数量'

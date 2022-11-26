@@ -60,7 +60,7 @@ class RankAddItem(
             fun onClick(e: InventoryClickEvent) {
                 if ((e.view.title != "§0放入 $name §7| §0关闭界面") || (e.view.player != player)) return
                 if (cd < System.currentTimeMillis()) {
-                    cd = System.currentTimeMillis() + 300
+                    cd = System.currentTimeMillis() + 100
                     if (e.rawSlot < 0) return
                     item?.let {
                         e.currentItem?.let {

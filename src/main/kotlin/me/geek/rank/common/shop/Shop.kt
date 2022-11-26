@@ -39,6 +39,7 @@ object Shop {
                 val var1 = SecuredFile.loadConfiguration(it)
 
                 if (var1.getString("type") != null && var1.getString("type") == "reward") {
+                    val node = var1.getString("NodeName") ?: "错误的节点名称配置"
                     var1.getConfigurationSection("Prizes")?.let { section ->
                         val prizes = mutableListOf<PrizesNode>().apply {
                             section.getKeys(false).forEach { key ->
@@ -48,7 +49,7 @@ object Shop {
                                 add(PrizesNode(name, chance, command!!))
                             }
                         }
-                        val node = section.getString("NodeName") ?: "错误的节点名称配置"
+                        GeekItemRank.debug("$node 奖池大小: ${prizes.size}")
                         REWARD_CACHE[node] = RewardData(node, prizes)
                     }
                     continue

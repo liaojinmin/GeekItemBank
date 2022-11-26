@@ -10,6 +10,7 @@ import me.geek.rank.common.rank.Rank
 import me.geek.rank.common.settings.SetTings
 import me.geek.rank.common.shop.Shop
 import me.geek.rank.scheduler.task.GShopTask
+import me.geek.rank.scheduler.task.PointsTopTask
 import me.geek.rank.utils.colorify
 import org.bukkit.Bukkit
 import taboolib.common.env.DependencyScope
@@ -34,7 +35,7 @@ object GeekItemRank : Plugin() {
     val instance by lazy { BukkitPlugin.getInstance() }
     val BukkitVersion by lazy { Bukkit.getVersion().substringAfter("MC:").filter { it.isDigit() }.toInt() }
 
-    const val VERSION = 1.0
+    const val VERSION = 1.3
 
 
     override fun onLoad() {
@@ -54,6 +55,8 @@ object GeekItemRank : Plugin() {
         HookPlugin.onHook()
 
         GShopTask() // 限制任务
+
+        PointsTopTask.getPointsTop() // 拉起排行榜任务
     }
     override fun onActive() {
         // 加载物品配置

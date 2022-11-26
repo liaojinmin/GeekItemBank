@@ -5,7 +5,7 @@ package me.geek.rank.scheduler.sql
  * 时间: 2022/10/12
  *
  **/
-data class MysqlData(
+data class MysqlConfig(
     val host: String = "127.0.0.1",
     val port: Int = 3306,
     val database: String = "server_Mail",

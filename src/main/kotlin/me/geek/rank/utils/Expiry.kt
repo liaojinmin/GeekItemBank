@@ -64,7 +64,7 @@ object Expiry {
                 value.contains(sRegex) -> ss = value.filter { it.isDigit() }.toLong()
             }
         }
-        return if (expire) getExpiry(dd, hh, mm, ss) + System.currentTimeMillis() else getExpiry(dd, hh, mm, ss) / 1000
+        return if (expire) getExpiry(dd, hh, mm, ss) + System.currentTimeMillis() else getExpiry(dd, hh, mm, ss)
     }
 
     private fun getExpiry(dd: Long, hh: Long, mm: Long, ss: Long): Long {

@@ -9,8 +9,8 @@ import java.io.File
  **/
 data class SqlConfig(
     val use_type: String = "sqlite",
-    val mysql: MysqlData = MysqlData(),
-    val hikari_settings: HikariData = HikariData(),
+    val mysql: MysqlConfig = MysqlConfig(),
+    val hikari_settings: HikariConfig = HikariConfig(),
 ) {
     var sqlite: File? = null
 }

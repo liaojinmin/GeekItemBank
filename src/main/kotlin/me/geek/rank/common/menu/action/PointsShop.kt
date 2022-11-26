@@ -122,16 +122,18 @@ class PointsShop(
                                                                         }
                                                                         global.GBuy_amt += 1
                                                                         playerData.takePoints(i2.price.toDouble())
-                                                                        player.sendLang("玩家-积分商店-购买成功", i2.displayName)
                                                                         PlayerData.updateData() // 更新数据库
                                                                         if (i2.reward.isNotEmpty()) {
                                                                             Shop.getRewardData(i2.reward)?.let { reward ->
                                                                                 reward.runReward().also { node ->
-                                                                                    KetherAPI.instantKether(player, node.command)
+                                                                                    KetherAPI.instantKether(player, node.command.replacePlaceholder(player))
                                                                                 }
-                                                                            }
+                                                                            } ?: GeekItemRank.debug("&c奖池错误")
                                                                         }
-                                                                        if (i2.action.isNotEmpty()) KetherAPI.instantKether(player, i2.action.replacePlaceholder(player))
+                                                                        if (i2.action.isNotEmpty()){
+                                                                            player.sendLang("玩家-积分商店-购买成功", i2.displayName)
+                                                                            KetherAPI.instantKether(player, i2.action.replacePlaceholder(player))
+                                                                        }
                                                                         return
                                                                     }
                                                                 }
@@ -159,17 +161,19 @@ class PointsShop(
                                                                     )
                                                                 }
                                                                 playerData.takePoints(i2.price.toDouble())
-                                                                player.sendLang("玩家-积分商店-购买成功", i2.displayName)
                                                                 PlayerData.updateData() // 更新数据库
 
                                                                 if (i2.reward.isNotEmpty()) {
                                                                     Shop.getRewardData(i2.reward)?.let { reward ->
                                                                         reward.runReward().also { node ->
-                                                                            KetherAPI.instantKether(player, node.command)
+                                                                            KetherAPI.instantKether(player, node.command.replacePlaceholder(player))
                                                                         }
-                                                                    }
+                                                                    } ?: GeekItemRank.debug("&c奖池错误")
                                                                 }
-                                                                if (i2.action.isNotEmpty()) KetherAPI.instantKether(player, i2.action.replacePlaceholder(player))
+                                                                if (i2.action.isNotEmpty()){
+                                                                    player.sendLang("玩家-积分商店-购买成功", i2.displayName)
+                                                                    KetherAPI.instantKether(player, i2.action.replacePlaceholder(player))
+                                                                }
 
                                                             } else player.sendLang("玩家-积分商店-积分不足", i2.price-PlayerData.points)
                                                         }
@@ -218,16 +222,19 @@ class PointsShop(
                 if (isGlobal) global!!.GBuy_amt += 1
                 it.Buy_amt += 1
                 playerData.takePoints(node.price.toDouble())
-                player.sendLang("玩家-积分商店-购买成功", node.displayName)
+
                 playerData.updateData() // 更新数据库
                 if (node.reward.isNotEmpty()) {
                     Shop.getRewardData(node.reward)?.let { reward ->
                         reward.runReward().also { node ->
-                            KetherAPI.instantKether(player, node.command)
+                            KetherAPI.instantKether(player, node.command.replacePlaceholder(player))
                         }
-                    }
+                    } ?: GeekItemRank.debug("&c奖池错误")
                 }
-                if (node.action.isNotEmpty()) KetherAPI.instantKether(player, node.action.replacePlaceholder(player))
+                if (node.action.isNotEmpty()){
+                    player.sendLang("玩家-积分商店-购买成功", node.displayName)
+                    KetherAPI.instantKether(player, node.action.replacePlaceholder(player))
+                }
                 return true
             }
         }
