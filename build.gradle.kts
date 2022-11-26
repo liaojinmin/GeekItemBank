@@ -31,8 +31,8 @@ taboolib {
         }
     }
 
-    relocate("me.geek.rank", group.toString())
-    relocate("com.zaxxer.hikari", "com.zaxxer.hikari_4_0_3_rank")
+    relocate("me.geek.bank", group.toString())
+    relocate("com.zaxxer.hikari", "com.zaxxer.hikari_4_0_3_bank")
     classifier = null
     version = taboolibVersion
 }
